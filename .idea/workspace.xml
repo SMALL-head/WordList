@@ -4,7 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa037fa2-3a22-4523-8ddc-e86ce6f7faba" name="Default Changelist" comment="" />
+    <list default="true" id="aa037fa2-3a22-4523-8ddc-e86ce6f7faba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WordListSP-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WordListSP-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/WordListSpApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/config/MybatisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/controller/ListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/controller/RedirectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/controller/WordController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/mapper/DictMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/mapper/ListMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/pojo/Translation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/pojo/WTContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/pojo/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/pojo/WordList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/service/ListService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/service/ListServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/service/SearchWordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/service/SearchWordServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zyc/wordlistsp/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/DictMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ListMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/ajax/a1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/public.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/someScripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vue.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.zyc.wordlistsp.WordListSpApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.zyc.wordlistsp.WordListSpApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zyc/wordlistsp/MyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zyc/wordlistsp/WordListSpApplicationTests.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +71,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/config/MybatisConfig.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/templates/home.html" root0="FORCE_HIGHLIGHTING" />
@@ -35,6 +86,7 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/ListController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25QOIOML3KslwXs0Jlzy2Nrnr44" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -144,12 +196,23 @@
       <workItem from="1645455767716" duration="8371000" />
       <workItem from="1645581415930" duration="135000" />
       <workItem from="1645581558284" duration="8529000" />
-      <workItem from="1645618075660" duration="11751000" />
+      <workItem from="1645618075660" duration="12965000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/WordListSP$WordListSpApplication.ic" NAME="WordListSpApplication Coverage Results" MODIFIED="1645581513489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
