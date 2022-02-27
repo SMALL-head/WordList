@@ -1,0 +1,36 @@
+.label1 {
+    font-size: 20px;
+
+}
+
+.col-center-block {
+    border: 1px double black;
+    border-radius: 3px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.relative_top {
+    position: relative;
+    top: 20px
+}
+
+.relative_left {
+    position: relative;
+    left: 16px;
+}
+
+.list-dropdown-item {
+    color: black;
+    text-align: center;
+    text-decoration: none
+}

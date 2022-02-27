@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zyc.wordlistsp.mapper.UserMapper">
+    <select id="searchByAccount" resultType="com.zyc.wordlistsp.pojo.User">
+        select * from WordListDB.user where account=${account}
+    </select>
+
+    <select id="listAll" resultType="com.zyc.wordlistsp.pojo.User">
+        select * from WordListDB.user
+    </select>
+
+    <select id="checkAuthority" resultType="com.zyc.wordlistsp.pojo.User">
+        select * from WordListDB.user where account=#{account} and pwd=#{pwd}
+    </select>
+</mapper>
