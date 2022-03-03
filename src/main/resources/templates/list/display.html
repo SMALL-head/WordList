@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
 <div class="container">
     <nav class="navbar navbar-expand-xl navbar-light bg-light">
         <a class="navbar-brand" href="#">单词本</a>
@@ -46,7 +47,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="/word/search">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Word" aria-label="Search"
-                       name="search" th:value="${search_word}" onfocus="this.placeholder=''"
+                       name="search" onfocus="this.placeholder=''"
                        onblur="this.placeholder='Search Word'" required>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search
                 </button>
@@ -82,50 +83,48 @@
     </div>
 </div>
 
+<div class="container">
+    <h2 th:text="${listname}">单词表名</h2>
+    <div class="list-group" id="showWords">
+        <form th:each="word : ${listPage.pageContent}" action="/word/deleteWord" class="form-inline">
+            <a tabindex="0" role="button" th:id="${word}" class="list-group-item list-group-item-action"
+               data-toggle="popover" data-trigger="focus" style="width: 60%"
+               title="释义" v-bind:data-content="translate" data-bs-toggle="popover1"
+               v-on:click="wordRequest($event)"><span th:text="${word}"></span>
 
-<div class="container relative_top">
-    <div th:if="${addWord}">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addWordToList">加入单词本</button>
-        <h4 style="padding-top: 20px">释义：</h4>
+                <input type="submit" class="btn-primary button-size-fix float-right" value="删除">
+
+                <input name="word" th:value="${word}" style="display: none">
+                <input name="listname" th:value="${listname}" style="display: none">
+                <input name="curPage" th:value="${listPage.curPage}" style="display: none">
+            </a>
+        </form>
     </div>
-    <br>
-    <p th:text="${res}">${res}</p>
-</div>
 
-
-<!--加入单词模态框-->
-<div class="modal fade" id="addWordToList" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!--模态框首行，包括标题和关闭按钮-->
-            <div class="modal-header">
-                <h5 class="modal-title">选择单词本并添加</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <!--body-->
-            <div class="modal-body" id="addWordModal">
-                <p>添加单词 <span th:text="${search_word}"></span></p>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="selectWordList">
-                            单词本
-                        </label>
-                    </div>
-                    <select class="custom-select" id="selectWordList">
-                        <option th:each="name1 : ${nameList}" th:text="${name1}" selected>name</option>
-                    </select>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    <a type="button" th:data-name="${search_word}" class="btn btn-primary" onclick="addWord(this.getAttribute('data-name'));">加入</a>
-                </div>
-            </div>
-        </div>
+    <!-- 分页显示 todo-->
+    <!--分页导航-->
+    <div style="padding: 30px">
+        <nav>
+            <ul class="pagination">
+                <!--Previous按钮，页码为1时禁用-->
+                <li th:class="${listPage.curPage == 1 ? 'page-item disabled':'page-item'}">
+                    <a class="page-link" th:href="@{/list/display(listname=${listname}, page=${listPage.curPage}-1)}">Previous</a>
+                </li>
+                <!--所有页码的展示-->
+                <li th:switch="${listPage.curPage== num}"
+                    th:class="${num == listPage.curPage ? 'page-item active':'page-item'}"
+                    th:each="num:${#numbers.sequence(1, listPage.pageSize)}">
+                    <a th:case="true" class="page-link" href="#">[[${num}]]</a>
+                    <a th:case="false" class="page-link" th:href="@{/list/display(listname=${listname} ,page=${num})}">[[${num}]]</a>
+                </li>
+                <!--Next按钮，最后一页禁用-->
+                <li th:class="${listPage.curPage == listPage.pageSize ? 'page-item disabled' : 'page-item'}">
+                    <a class="page-link" th:href="@{/list/display(listname=${listname}, page=${listPage.curPage}+1)}">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
+
 </div>
 
 </body>

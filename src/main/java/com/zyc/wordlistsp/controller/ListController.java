@@ -1,6 +1,6 @@
 package com.zyc.wordlistsp.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zyc.wordlistsp.pojo.ListPage;
 import com.zyc.wordlistsp.pojo.WordList;
 import com.zyc.wordlistsp.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,15 +66,20 @@ public class ListController {
     public String search(@RequestParam("listname") String listname, @RequestParam(value = "page", defaultValue = "1") int page, Model model) {
         List<String> words = listService.listAllWordByListname(listname);
         List<String> names = listService.listAll();
+         //拿到Page
+        ListPage<String> listPage = listService.getWordsOnPage(listname, page);
+
+        //处理删除单词后的重新加载界面的特判，若某一页最后一个单词被删除，就执行
+        if (listPage.getPageContent().size() == 0 && page > 1) {
+            listPage = listService.getWordsOnPage(listname, page-1);
+        }
+
         model.addAttribute("nameList", names);
         model.addAttribute("listname", listname);
         model.addAttribute("words", words);
+        model.addAttribute("listPage", listPage);
 
-        Page<WordList> searchBookPage = new Page<>(page, 2);
-        Page<WordList> page_res = listService.page(searchBookPage, null);
-        model.addAttribute("words", page_res);
-
-        return "home";
+        return "/list/display";
     }
 
     @PostMapping("/addWord")

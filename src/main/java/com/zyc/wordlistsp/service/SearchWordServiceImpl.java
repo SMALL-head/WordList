@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 @Service
@@ -52,16 +54,21 @@ public class SearchWordServiceImpl implements SearchWordService {
     }
 
     @Override
-    public Word search2(String word) {
+    public Map<String, Object> search2(String word) {
         String ret;
         String search = mapper.search(word);
+        if (search == null) {
+            String search1 = search(word);
+            return new HashMap<>(){{this.put("String", search1);}};
+        }
         Word word1 = null;
         try {
             word1 = objectMapper.readValue(search, Word.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return word1;
+        Word finalWord = word1;
+        return new HashMap<>(){{this.put("Word", finalWord);}};
     }
 
 }

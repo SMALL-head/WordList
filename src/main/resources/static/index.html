@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/public.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+        #d1{
+            width: 180px;
+            height: 38px;
+            margin:100px auto;
+            text-align: center;
+            line-height: 38px;
+            background-color: cornflowerblue;
+            border-radius: 5px;
+        }
+        a:hover {
+            color: slategray;
+        }
+    </style>
 </head>
 <body>
-欢迎你
+<div id="d1">
+    <a href="/login">进入页面</a>
+</div>
+
 </body>
 </html>

@@ -64,10 +64,10 @@ public class WordController {
     }
 
     @RequestMapping("/deleteWord")
-    public String deleteWord(@RequestParam("listname") String list, @RequestParam("word") String word) {
+    public String deleteWord(@RequestParam("listname") String list, @RequestParam("word") String word, @RequestParam("curPage") int curPage) {
         System.out.println("list:" + list + " " + "word:" + word);
         listService.deleteWordByName(list, word);
-        return "redirect:/list/search.do?listname=" + list;
+        return "redirect:/list/display?listname=" + list + "&page=" + curPage;
     }
 
 }

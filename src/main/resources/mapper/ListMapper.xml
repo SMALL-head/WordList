@@ -5,7 +5,7 @@
 
 <mapper namespace="com.zyc.wordlistsp.mapper.ListMapper">
     <insert id="addWordToList">
-        insert into WordListDB.${name} values (#{word})
+        insert into WordListDB.${listname} values (#{word})
     </insert>
 
     <update id="addList" parameterType="String">
@@ -31,6 +31,12 @@
 
     <select id="listAllByListname" parameterType="String" resultType="String">
         select * from WordListDB.${listname};
+    </select>
+    <select id="searchByListnameInPage" resultType="java.lang.String">
+        select * from WordListDB.${listname} limit #{page}, #{limitation};
+    </select>
+    <select id="searchSizeByListname" resultType="java.lang.Integer">
+        select count(*) from WordListDB.${listname};
     </select>
 
     <delete id="deleteWordByName">

@@ -1,6 +1,5 @@
 package com.zyc.wordlistsp.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zyc.wordlistsp.pojo.WordList;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -8,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface ListMapper extends BaseMapper<WordList> {
+public interface ListMapper {
     int addList(String name);
 
     int deleteList(String name);
@@ -26,5 +25,9 @@ public interface ListMapper extends BaseMapper<WordList> {
 
     List<String> listAllByListname(String listname);
 
-    int addWordToList(@Param("name") String listname, @Param("word") String word);
+    int addWordToList(@Param("listname") String listname, @Param("word") String word);
+
+    List<String> searchByListnameInPage(@Param("listname") String listname,@Param("page") int page,@Param("limitation") int limitation);
+
+    int searchSizeByListname(@Param("listname") String listname);
 }

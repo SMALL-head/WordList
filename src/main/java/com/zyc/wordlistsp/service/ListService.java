@@ -1,11 +1,9 @@
 package com.zyc.wordlistsp.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.zyc.wordlistsp.pojo.WordList;
-
+import com.zyc.wordlistsp.pojo.ListPage;
 import java.util.List;
 
-public interface ListService extends IService<WordList> {
+public interface ListService{
     int addList(String name);
 
     List<String> listAll();
@@ -17,4 +15,6 @@ public interface ListService extends IService<WordList> {
     int deleteWordByName(String list, String word);
 
     int addWordToList(String list, String word);
+
+    ListPage<String> getWordsOnPage(String list, int page);
 }
