@@ -53,6 +53,11 @@ public class SearchWordServiceImpl implements SearchWordService {
         return replace1.replace("</li>", "").replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("\n", "<br>");
     }
 
+    /**
+     * 版本2的单词查询方法
+     * @param word 查询的单词
+     * @return 若本地库中能查询到，可以使用get("Word")得到Word封装对象；否则将get("String")返回有道的简明翻译
+     */
     @Override
     public Map<String, Object> search2(String word) {
         String ret;
