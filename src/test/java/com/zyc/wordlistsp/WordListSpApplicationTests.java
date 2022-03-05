@@ -49,7 +49,7 @@ class WordListSpApplicationTests {
 
     @Test
     public void test2() {
-        Map<String, Object> a = service.search2("update");
+        Map<String, Object> a = service.search2("new");
         String stringTrans = null;
         Word wordTrans = null;
         if (a.get("String") != null) {
@@ -68,6 +68,7 @@ class WordListSpApplicationTests {
                 }
             }
         }
+        else
         System.out.println(stringTrans);
     }
 

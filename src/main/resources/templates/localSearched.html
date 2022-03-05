@@ -44,8 +44,6 @@
                     </div>
                 </li>
             </ul>
-
-            <!--查找单词表单提交-->
             <form class="form-inline my-2 my-lg-0" method="get" action="/word/search2">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Word" aria-label="Search"
                        name="search" th:value="${search_word}" onfocus="this.placeholder=''"
@@ -86,50 +84,90 @@
 
 
 <div class="container relative_top">
-    <div th:if="${addWord}">
+    <div>
         <button class="btn btn-primary" data-toggle="modal" data-target="#addWordToList">加入单词本</button>
         <h4 style="padding-top: 20px">释义：</h4>
     </div>
     <br>
-    <p th:text="${res}">${res}</p>
-</div>
-
-
-<!--加入单词模态框-->
-<div class="modal fade" id="addWordToList" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!--模态框首行，包括标题和关闭按钮-->
-            <div class="modal-header">
-                <h5 class="modal-title">选择单词本并添加</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <div th:if="${translationMap.size() == 1}">
+        <div th:each="translation : ${translationMap}">
+            <h4>
+                <span th:text="${search_word}">单词</span>
+                <span th:text="${translation.value.pattern}" style="font-size: 10px; color: grey">时态</span>
+            </h4>
+            <ul th:each="t : ${translation.value.translationList}">
+                <li th:utext="${t.translation}">翻译</li>
+            </ul>
+        </div>
+    </div>
+    <div id="MultiTranslation" class="accordion" th:if="${translationMap.size() > 1}"
+         th:each="translation, iterStat : ${translationMap}">
+        <div th:if="${translation.key != 'none'}" class="card">
+            <div class="card-header" th:id="'heading' + ${iterStat.current}">
+                <h2 class="mb-0">
+                    <button th:text="${translation.key}" class="btn btn-link btn-block text-left" type="button"
+                            data-toggle="collapse"
+                            th:data-target="'#t'+${iterStat.index}" aria-expanded="true"
+                            th:aria-controls="'#t'+${iterStat.index}">
+                        大标题
+                    </button>
+                </h2>
             </div>
 
-            <!--body-->
-            <div class="modal-body" id="addWordModal">
-                <p>添加单词 <span th:text="${search_word}"></span></p>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="selectWordList">
-                            单词本
-                        </label>
+            <div th:id="'t'+${iterStat.index}" class="collapse" th:aria-labelledby="'heading' + ${iterStat.current}"
+                 data-parent="#MultiTranslation">
+                <h4>
+                    <span th:text="${search_word}">单词</span>
+                    <span th:text="${translation.value.pattern}" style="font-size: 10px; color: grey">时态</span>
+                </h4>
+
+                <!--循环每个大标签下的每条翻译-->
+                <div class="card-body" th:each="t : ${translation.value.translationList}">
+                    <div th:utext="${t.translation}">
+                        每条翻译
                     </div>
-                    <select class="custom-select" id="selectWordList">
-                        <option th:each="name1 : ${nameList}" th:text="${name1}" selected>name</option>
-                    </select>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    <a type="button" th:data-name="${search_word}" class="btn btn-primary" onclick="addWord(this.getAttribute('data-name'));">加入</a>
+            </div>
+        </div>
+
+
+        <!--加入单词模态框-->
+        <div class="modal fade" id="addWordToList" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!--模态框首行，包括标题和关闭按钮-->
+                    <div class="modal-header">
+                        <h5 class="modal-title">选择单词本并添加</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--body-->
+                    <div class="modal-body" id="addWordModal">
+                        <p>添加单词 <span th:text="${search_word}"></span></p>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="selectWordList">
+                                    单词本
+                                </label>
+                            </div>
+                            <select class="custom-select" id="selectWordList">
+                                <option th:each="name1 : ${nameList}" th:text="${name1}" selected>name</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                            <a type="button" th:data-name="${search_word}" class="btn btn-primary"
+                               onclick="addWord(this.getAttribute('data-name'));">加入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 </body>
 
 <script src="/ajax/a1.js"></script>
