@@ -76,4 +76,6 @@ public class SearchWordServiceImpl implements SearchWordService {
         return new HashMap<>(){{this.put("Word", finalWord);}};
     }
 
+    
+
 }
