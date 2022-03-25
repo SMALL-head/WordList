@@ -37,7 +37,7 @@
                         单词本
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a th:each="name : ${nameList}" th:href="@{/list/display(listname=${name})}"
+                        <a th:each="name : ${nameList}" th:href="@{/list/display(listname=${name}, uid=${uid})}"
                            class="dropdown-item"
                            style="color: black;text-align: center;text-decoration: none" th:text="${name}">listname</a>
                         <div class="dropdown-divider"></div>
@@ -45,10 +45,11 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" method="get" action="/word/search">
+            <form class="form-inline my-2 my-lg-0" method="get" action="/word/search2">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Word" aria-label="Search"
                        name="search" onfocus="this.placeholder=''"
                        onblur="this.placeholder='Search Word'" required>
+                <input style="display: none" name="uid" th:value="${uid}">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search
                 </button>
             </form>
@@ -97,29 +98,29 @@
                 <input name="word" th:value="${word}" style="display: none">
                 <input name="listname" th:value="${listname}" style="display: none">
                 <input name="curPage" th:value="${listPage.curPage}" style="display: none">
+                <input name="uid" th:value="${uid}" style="display: none">
             </a>
         </form>
     </div>
 
-    <!-- 分页显示 todo-->
     <!--分页导航-->
     <div style="padding: 30px">
         <nav>
             <ul class="pagination">
                 <!--Previous按钮，页码为1时禁用-->
                 <li th:class="${listPage.curPage == 1 ? 'page-item disabled':'page-item'}">
-                    <a class="page-link" th:href="@{/list/display(listname=${listname}, page=${listPage.curPage}-1)}">Previous</a>
+                    <a class="page-link" th:href="@{/list/display(listname=${listname}, uid=${uid}, page=${listPage.curPage}-1)}">Previous</a>
                 </li>
                 <!--所有页码的展示-->
-                <li th:switch="${listPage.curPage== num}"
+                <li th:switch="${listPage.curPage == num}"
                     th:class="${num == listPage.curPage ? 'page-item active':'page-item'}"
                     th:each="num:${#numbers.sequence(1, listPage.pageSize)}">
                     <a th:case="true" class="page-link" href="#">[[${num}]]</a>
-                    <a th:case="false" class="page-link" th:href="@{/list/display(listname=${listname} ,page=${num})}">[[${num}]]</a>
+                    <a th:case="false" class="page-link" th:href="@{/list/display(listname=${listname}, uid=${uid}, page=${num})}">[[${num}]]</a>
                 </li>
                 <!--Next按钮，最后一页禁用-->
                 <li th:class="${listPage.curPage == listPage.pageSize ? 'page-item disabled' : 'page-item'}">
-                    <a class="page-link" th:href="@{/list/display(listname=${listname}, page=${listPage.curPage}+1)}">Next</a>
+                    <a class="page-link" th:href="@{/list/display(listname=${listname}, uid=${uid}, page=${listPage.curPage}+1)}">Next</a>
                 </li>
             </ul>
         </nav>

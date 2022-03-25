@@ -36,7 +36,7 @@
                         单词本
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a th:each="name : ${nameList}" th:href="@{/list/display(listname=${name})}"
+                        <a th:each="name : ${nameList}" th:href="@{/list/display(listname=${name}, uid=${uid})}"
                            class="dropdown-item"
                            style="color: black;text-align: center;text-decoration: none" th:text="${name}">listname</a>
                         <div class="dropdown-divider"></div>
@@ -48,6 +48,7 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Word" aria-label="Search"
                        name="search" th:value="${search_word}" onfocus="this.placeholder=''"
                        onblur="this.placeholder='Search Word'" required>
+                <input style="display: none" th:value="${uid}" name="uid">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search
                 </button>
             </form>
@@ -69,6 +70,7 @@
                       onsubmit="return check()">
                     <div class="form-group">
                         <label for="listName" class="col-form-label" id="newList-name-input">名称:</label>
+                        <input id="uidValue" style="display: none" name="uid" th:value="${uid}"/>
                         <input type="text" class="form-control" id="listName" name="listName" onblur="judge()" required>
                         <span id="newList-judge-response"></span>
                     </div>
@@ -129,39 +131,42 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <!--加入单词模态框-->
-        <div class="modal fade" id="addWordToList" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    <!--加入单词模态框-->
+    <div class="modal fade" id="addWordToList" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-                    <!--模态框首行，包括标题和关闭按钮-->
-                    <div class="modal-header">
-                        <h5 class="modal-title">选择单词本并添加</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                <!--模态框首行，包括标题和关闭按钮-->
+                <div class="modal-header">
+                    <h5 class="modal-title">选择单词本并添加</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!--body-->
+                <div class="modal-body" id="addWordModal">
+                    <p>添加单词 <span th:text="${search_word}"></span></p>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="selectWordList">
+                                单词本
+                            </label>
+                        </div>
+                        <select class="custom-select" id="selectWordList">
+                            <option th:each="name1 : ${nameList}" th:text="${name1}" selected>name</option>
+                        </select>
                     </div>
-
-                    <!--body-->
-                    <div class="modal-body" id="addWordModal">
-                        <p>添加单词 <span th:text="${search_word}"></span></p>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="selectWordList">
-                                    单词本
-                                </label>
-                            </div>
-                            <select class="custom-select" id="selectWordList">
-                                <option th:each="name1 : ${nameList}" th:text="${name1}" selected>name</option>
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                            <a type="button" th:data-name="${search_word}" class="btn btn-primary"
-                               onclick="addWord(this.getAttribute('data-name'));">加入</a>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <a type="button" th:data-name="${search_word}" th:uid-val="${uid}"
+                           class="btn btn-primary"
+                           onclick="addWord(this.getAttribute('data-name'), this.getAttribute('uid-val'));">
+                            加入
+                        </a>
                     </div>
                 </div>
             </div>

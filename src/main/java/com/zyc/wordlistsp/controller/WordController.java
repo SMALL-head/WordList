@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -38,21 +39,26 @@ public class WordController {
     }
 
     @RequestMapping("/search")
-    public String search(@RequestParam("search") String word, Model model) {
+    public String search(@RequestParam("search") String word,
+                         @RequestParam("uid") int uid,
+                         Model model) {
         String result = service.search(word);
         model.addAttribute("res", result);
         model.addAttribute("search_word", word);
-        model.addAttribute("nameList", listService.listAll());
+        model.addAttribute("nameList", listService.listAllByUid(uid));
         if ("无查询结果".equals(result)) {
             model.addAttribute("addWord", false);
         } else {
             model.addAttribute("addWord", true);
         }
+        model.addAttribute("uid", uid);
         return "home";
     }
 
     @RequestMapping("/search2")
-    public String search2(@RequestParam("search") String word, Model model) {
+    public String search2(@RequestParam("search") String word,
+                          @RequestParam("uid") int uid,
+                          Model model) {
         String stringRes = null;
         Word wordRes = null;
         Map<String, Object> resMap = service.search2(word);
@@ -64,12 +70,13 @@ public class WordController {
 
         if (wordRes != null) {
             model.addAttribute("search_word", word);
-            model.addAttribute("nameList", listService.listAll());
+            model.addAttribute("nameList", listService.listAllByUid(uid));
 //            model.addAttribute("addWord", true);
 
             //如何包装结果呢？
             Map<String, WTContent> translations = wordRes.getTranslations();
             model.addAttribute("translationMap", translations);
+            model.addAttribute("uid", uid);
             return "localSearched";
         }
 
@@ -83,6 +90,8 @@ public class WordController {
                 model.addAttribute("addWord", true);
             }
         }
+
+        model.addAttribute("uid", uid);
 
         return "home";
     }
@@ -103,9 +112,11 @@ public class WordController {
     }
 
     @RequestMapping("/deleteWord")
-    public String deleteWord(@RequestParam("listname") String list, @RequestParam("word") String word, @RequestParam("curPage") int curPage) {
-        listService.deleteWordByName(list, word);
-        return "redirect:/list/display?listname=" + list + "&page=" + curPage;
+    public String deleteWord(@RequestParam("listname") String list,
+                             @RequestParam("word") String word,
+                             @RequestParam("curPage") int curPage,
+                             @RequestParam("uid") int uid) {
+        listService.deleteWordByName(list, word, uid);
+        return "redirect:/list/display?listname=" + list + "&page=" + curPage + "&uid=" + uid;
     }
-
 }

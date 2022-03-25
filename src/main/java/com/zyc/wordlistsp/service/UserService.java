@@ -8,4 +8,5 @@ public interface UserService {
     User searchByAccount(String account);
     List<User> listAll();
     boolean checkAuthority(String account, String pwd);
+    int searchIdByAccount(String account);
 }

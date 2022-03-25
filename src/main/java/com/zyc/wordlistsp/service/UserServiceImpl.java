@@ -35,4 +35,9 @@ public class UserServiceImpl implements UserService{
         User user = userMapper.checkAuthority(account, pwd);
         return user != null;
     }
+
+    @Override
+    public int searchIdByAccount(String account) {
+        return userMapper.searchIdByAccount(account);
+    }
 }

@@ -1,5 +1,6 @@
 function judge() {
     let value = document.getElementById("listName").value;
+    let uid = document.getElementById("uidValue").value;
     let $newList = $("#newList-judge-response");
     if (value === "") {
         $newList.addClass("text-danger");
@@ -7,7 +8,7 @@ function judge() {
         return;
     }
     let htmlobj = $.get({
-        url: "/list/newList.do?name=" + value,
+        url: "/list/newList.do?name=" + value + "&uid=" + uid,
         success: function (data) {
             let res = htmlobj.responseText;
 
@@ -38,7 +39,7 @@ function judge() {
     });
 }
 
-addWord = function (word) {
+addWord = function (word, uid) {
     let p = new Promise((resolve => {
         let url = "/list/addWord";
         let resp = $.post({
@@ -46,7 +47,8 @@ addWord = function (word) {
             contentType: "application/x-www-form-urlencoded; charset=utf-8",
             data: {
                 'listname': $("#selectWordList option:selected").text(),
-                'word': word
+                'word': word,
+                'uid': uid
             },
             success: function () {
                 resolve(resp.responseText);

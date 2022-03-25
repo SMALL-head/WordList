@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa037fa2-3a22-4523-8ddc-e86ce6f7faba" name="Default Changelist" comment="添加了分页功能">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/localSearched.html" afterDir="false" />
+    <list default="true" id="aa037fa2-3a22-4523-8ddc-e86ce6f7faba" name="Default Changelist" comment="search功能变更本地查找">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/2f4c4ceb-0a86-4701-a50c-9f3263c899d9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2f4c4ceb-0a86-4701-a50c-9f3263c899d9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_5_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_5_1.xml" beforeDir="false" />
@@ -13,12 +12,27 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_5_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_5_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/WordListSpApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/WordListSpApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/config/MybatisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/ListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/WordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/SearchWordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/SearchWordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/DictMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/ListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/ListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/pojo/PageConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/config/PageConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/ajax/a1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ajax/a1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list/display.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/list/display.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/localSearched.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/localSearched.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/MyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/WordListSpApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/WordListSpApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,18 +56,26 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="searchUpdate" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/home.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/UserMapper.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/SearchWordServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/home.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/UserMapper.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/SearchWordService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/WordListSpApplication.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/ListController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -75,10 +97,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.15789473" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="jprofiler" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -100,35 +122,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WordListSpApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WordListSpApplicationTests.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="WordListSP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zyc.wordlistsp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zyc.wordlistsp" />
-      <option name="MAIN_CLASS_NAME" value="com.zyc.wordlistsp.WordListSpApplicationTests" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WordListSpApplicationTests.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WordListSP" />
       <extension name="coverage">
@@ -177,6 +170,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WordListSpApplicationTests.testListService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WordListSP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zyc.wordlistsp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zyc.wordlistsp" />
+      <option name="MAIN_CLASS_NAME" value="com.zyc.wordlistsp.WordListSpApplicationTests" />
+      <option name="METHOD_NAME" value="testListService" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordListSpApplicationTests.testUserService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WordListSP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zyc.wordlistsp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zyc.wordlistsp" />
+      <option name="MAIN_CLASS_NAME" value="com.zyc.wordlistsp.WordListSpApplicationTests" />
+      <option name="METHOD_NAME" value="testUserService" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WordListSpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="WordListSP" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zyc.wordlistsp.WordListSpApplication" />
@@ -186,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WordListSpApplicationTests.test2" />
-        <item itemvalue="JUnit.WordListSpApplicationTests.test4" />
+        <item itemvalue="JUnit.WordListSpApplicationTests.testListService" />
         <item itemvalue="JUnit.WordListSpApplicationTests.test3" />
-        <item itemvalue="JUnit.WordListSpApplicationTests.test1" />
+        <item itemvalue="JUnit.WordListSpApplicationTests.testUserService" />
         <item itemvalue="JUnit.WordListSpApplicationTests.test4" />
+        <item itemvalue="JUnit.WordListSpApplicationTests.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +236,15 @@
       <workItem from="1645618075660" duration="20530000" />
       <workItem from="1645973806278" duration="23486000" />
       <workItem from="1646458713699" duration="9503000" />
+      <workItem from="1646898034029" duration="682000" />
+      <workItem from="1647049632647" duration="1060000" />
+      <workItem from="1647154877056" duration="30000" />
+      <workItem from="1647222694661" duration="2213000" />
+      <workItem from="1647265548953" duration="632000" />
+      <workItem from="1647391557096" duration="22997000" />
+      <workItem from="1647437481410" duration="4426000" />
+      <workItem from="1647672096774" duration="2046000" />
+      <workItem from="1648172459690" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="添加了分页功能">
       <created>1646301597658</created>
@@ -250,7 +284,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="searchUpdate" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>

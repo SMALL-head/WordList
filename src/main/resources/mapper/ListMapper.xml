@@ -5,7 +5,11 @@
 
 <mapper namespace="com.zyc.wordlistsp.mapper.ListMapper">
     <insert id="addWordToList">
-        insert into WordListDB.${listname} values (#{word})
+        insert into WordListDB.word_in_list(uid, listname, word) values (#{uid}, #{listname}, #{word})
+    </insert>
+
+    <insert id="addListByUid">
+        insert into WordListDB.__list_name(list_name, uid) values (#{name}, #{uid});
     </insert>
 
     <update id="addList" parameterType="String">
@@ -25,21 +29,27 @@
         select * from WordListDB.__list_name
     </select>
 
-    <select id="searchByName" parameterType="String" resultType="String">
-        select * from WordListDB.__list_name where list_name like #{name}
+    <select id="searchByName" resultType="String">
+        select * from WordListDB.__list_name where uid=#{uid} and list_name like #{name}
     </select>
 
-    <select id="listAllByListname" parameterType="String" resultType="String">
-        select * from WordListDB.${listname};
+    <select id="listAllByListname" resultType="String">
+        select word from WordListDB.word_in_list where uid=#{uid} and listname=#{listname};
     </select>
+
     <select id="searchByListnameInPage" resultType="java.lang.String">
-        select * from WordListDB.${listname} limit #{page}, #{limitation};
+        select word from WordListDB.word_in_list where uid=#{uid} and listname=#{listname} limit #{page}, #{limitation};
     </select>
+
     <select id="searchSizeByListname" resultType="java.lang.Integer">
-        select count(*) from WordListDB.${listname};
+        select count(*) from WordListDB.word_in_list where uid=#{uid} and listname=#{listname};
+    </select>
+
+    <select id="listAllByUid" resultType="String">
+        select list_name from WordListDB.__list_name where uid=#{uid};
     </select>
 
     <delete id="deleteWordByName">
-        delete from WordListDB.${list} where word = #{word};
+        delete from WordListDB.word_in_list where word = #{word} and uid=#{uid} and listname=#{list};
     </delete>
 </mapper>
