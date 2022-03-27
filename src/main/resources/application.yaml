@@ -21,3 +21,5 @@ mybatis:
 
 list-page:
     limitation: 3
+server:
+    port: 8084

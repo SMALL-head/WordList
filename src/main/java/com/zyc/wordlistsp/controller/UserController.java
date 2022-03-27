@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -17,10 +18,6 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     UserService userService;
-
-    public UserService getUserService() {
-        return userService;
-    }
 
     @Autowired
     @Qualifier("userServiceImpl")
@@ -41,11 +38,15 @@ public class UserController {
     }
 
     @PostMapping("/checkLogin")
-    public String checkLogin(@RequestParam("account") String account,@RequestParam("pwd") String pwd, Model model) {
+    public String checkLogin(@RequestParam("account") String account,
+                             @RequestParam("pwd") String pwd,
+                             Model model, RedirectAttributes redirectAttributes) {
         if (!userService.checkAuthority(account, pwd)) {
             model.addAttribute("fail", "账号密码错误");
             return "login/login";
         } else {
+            int uid = userService.searchIdByAccount(account);
+            redirectAttributes.addFlashAttribute("uid", uid);
             return "redirect:/list/home";
         }
     }

@@ -15,4 +15,7 @@
     <select id="checkAuthority" resultType="com.zyc.wordlistsp.pojo.User">
         select * from WordListDB.user where account=#{account} and pwd=#{pwd}
     </select>
+    <select id="searchIdByAccount" resultType="java.lang.Integer">
+        select uid from WordListDB.user where account=#{account};
+    </select>
 </mapper>

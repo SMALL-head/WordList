@@ -13,4 +13,6 @@ public interface UserMapper {
     List<User> listAll();
 
     User checkAuthority(@Param("account") String account, @Param("pwd") String pwd);
+
+    int searchIdByAccount(String account);
 }

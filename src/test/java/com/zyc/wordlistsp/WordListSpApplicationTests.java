@@ -4,6 +4,7 @@ import com.zyc.wordlistsp.mapper.UserMapper;
 import com.zyc.wordlistsp.pojo.*;
 import com.zyc.wordlistsp.service.ListServiceImpl;
 import com.zyc.wordlistsp.service.SearchWordServiceImpl;
+import com.zyc.wordlistsp.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +26,13 @@ class WordListSpApplicationTests {
     SearchWordServiceImpl service;
 
     ListServiceImpl listService;
+
+    UserService userService;
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     @Autowired
     public void setListService(ListServiceImpl listService) {
@@ -49,7 +57,7 @@ class WordListSpApplicationTests {
 
     @Test
     public void test2() {
-        Map<String, Object> a = service.search2("new");
+        Map<String, Object> a = service.search2("culture");
         String stringTrans = null;
         Word wordTrans = null;
         if (a.get("String") != null) {
@@ -73,13 +81,14 @@ class WordListSpApplicationTests {
     }
 
     @Test
-    public void test3() {
+    public void testPaging() {
         //测试paging
-        ListPage<String> list1 = listService.getWordsOnPage("list1", 1);
+        int uid = 1;
+        ListPage<String> list1 = listService.getWordsOnPage("list1", 1, uid);
         System.out.println(list1);
-        list1 = listService.getWordsOnPage("list1", 2);
+        list1 = listService.getWordsOnPage("list1", 2, uid);
         System.out.println(list1);
-        list1 = listService.getWordsOnPage("list1", 3);
+        list1 = listService.getWordsOnPage("list1", 3, uid);
         System.out.println(list1);
     }
 
@@ -89,5 +98,19 @@ class WordListSpApplicationTests {
         userMapper.listAll();
         userMapper.listAll();
     }
+
+    @Test
+    public void testUserService() {
+        System.out.println(userService.searchIdByAccount("user1"));
+
+    }
+
+    @Test
+    void testListService() {
+        // 测试listService的相关功能
+//        System.out.println(listService.listAllByUid(2));
+        listService.deleteWordByName("list4", "search", 1);
+    }
+
 
 }
