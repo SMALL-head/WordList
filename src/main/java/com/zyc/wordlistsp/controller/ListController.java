@@ -82,7 +82,7 @@ public class ListController {
         model.addAttribute("listPage", listPage);
         model.addAttribute("uid", uid);
 
-        return "/list/display";
+        return "list/display";
     }
 
     @PostMapping("/addWord")

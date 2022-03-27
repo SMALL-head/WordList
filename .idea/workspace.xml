@@ -6,34 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aa037fa2-3a22-4523-8ddc-e86ce6f7faba" name="Default Changelist" comment="search功能变更本地查找">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/2f4c4ceb-0a86-4701-a50c-9f3263c899d9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2f4c4ceb-0a86-4701-a50c-9f3263c899d9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/WordListSpApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/WordListSpApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/config/MybatisConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/ListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/controller/WordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/ListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/ListMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/pojo/PageConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/config/PageConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/ListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zyc/wordlistsp/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/ajax/a1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/ajax/a1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list/display.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/list/display.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/localSearched.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/localSearched.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/MyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/WordListSpApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zyc/wordlistsp/WordListSpApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +97,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WordListSpApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WordListSpApplicationTests.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WordListSP" />
       <extension name="coverage">
@@ -244,7 +232,8 @@
       <workItem from="1647391557096" duration="22997000" />
       <workItem from="1647437481410" duration="4426000" />
       <workItem from="1647672096774" duration="2046000" />
-      <workItem from="1648172459690" duration="338000" />
+      <workItem from="1648172459690" duration="9890000" />
+      <workItem from="1648389145087" duration="1861000" />
     </task>
     <task id="LOCAL-00001" summary="添加了分页功能">
       <created>1646301597658</created>
@@ -267,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646484886448</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="search功能变更本地查找">
+      <created>1648173032499</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1648173032499</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +280,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="reviseTableStructure" />
                       </list>
                     </value>
                   </entry>
@@ -299,7 +295,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加了分页功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了分页功能" />
+    <MESSAGE value="表结构更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="表结构更改" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/WordListSP$WordListSpApplication.ic" NAME="WordListSpApplication Coverage Results" MODIFIED="1645581513489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
