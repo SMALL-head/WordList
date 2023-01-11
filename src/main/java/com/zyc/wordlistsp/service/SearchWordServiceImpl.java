@@ -1,5 +1,6 @@
 package com.zyc.wordlistsp.service;
 
+import com.alibaba.druid.util.StringUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zyc.wordlistsp.mapper.DictMapper;
@@ -8,16 +9,17 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @Service
 public class SearchWordServiceImpl implements SearchWordService {
-
 
     DictMapper mapper;
 
@@ -76,6 +78,14 @@ public class SearchWordServiceImpl implements SearchWordService {
         return new HashMap<>(){{this.put("Word", finalWord);}};
     }
 
-    
+    @Override
+    @Cacheable(value = {"searchPrefix"}, cacheManager = "prefixSearchCacheManager", keyGenerator = "searchPrefixKeyGenerator")
+    public List<String> searchByPrefix(String prefix) {
+        if (StringUtils.isEmpty(prefix)) {
+            return null;
+        }
+        return mapper.searchByPrefix(prefix);
+    }
+
 
 }

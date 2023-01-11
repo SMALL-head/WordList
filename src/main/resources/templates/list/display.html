@@ -84,6 +84,7 @@
     </div>
 </div>
 
+<!--展示单词的界面-->
 <div class="container">
     <h2 th:text="${listname}">单词表名</h2>
     <div class="list-group" id="showWords">
@@ -91,7 +92,8 @@
             <a tabindex="0" role="button" th:id="${word}" class="list-group-item list-group-item-action"
                data-toggle="popover" data-trigger="focus" style="width: 60%"
                title="释义" v-bind:data-content="translate" data-bs-toggle="popover1"
-               v-on:click="wordRequest($event)"><span th:text="${word}"></span>
+               v-on:click="wordRequest($event)">
+                <span th:text="${word}"></span>
 
                 <input type="submit" class="btn-primary button-size-fix float-right" value="删除">
 

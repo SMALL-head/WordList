@@ -1,7 +1,6 @@
 package com.zyc.wordlistsp.controller;
 
 import com.zyc.wordlistsp.pojo.ListPage;
-import com.zyc.wordlistsp.pojo.WordList;
 import com.zyc.wordlistsp.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

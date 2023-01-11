@@ -1,0 +1,11 @@
+.display_status_none {
+    position: absolute;
+    display: none;
+
+
+}
+
+.display_status_block {
+    position: absolute;
+    display: block;
+}

@@ -1,6 +1,5 @@
 package com.zyc.wordlistsp.mapper;
 
-import com.zyc.wordlistsp.pojo.WordList;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -14,7 +14,7 @@ function check() {
     return $newList.html() === "名字正确";
 }
 
-new Vue({
+let a1 = new Vue({
     el: "#showWords",
     data: {
         translate: "查询中...",
@@ -26,7 +26,7 @@ new Vue({
                 let search_res = "";
                 let selectDom = e.target
                 let word = selectDom.id
-                console.log(selectDom)
+                // console.log(selectDom)
                 let requestCommand = "/word/searchWord?word=" + word;
                 let res = $.get({
                     url: requestCommand,
@@ -43,6 +43,45 @@ new Vue({
     }
 })
 
+let a2 = new Vue({
+    el: "#searchBox",
+    data: {
+        words: [],
+        displayStatus: false
+    },
+    methods: {
+        searchByPrefix: function (event) {
+            let p = new Promise((resolve) => {
+                let search_res = [];
+                let selectDom = event.target
+                let prefix = selectDom.value
+                let request = "/word/prefix?prefix=" + prefix;
+                let res = $.get({
+                    url: request,
+                    success: function () {
+                        search_res = res;
+                        resolve(search_res);
+                    }
+                })
+            }).then(data => {
+                this.words = data;
+                console.log(data);
+            })
+        },
+
+        onfocus: function (event) {
+            let elementDom = event.target;
+            elementDom.placeholder = "";
+            this.displayStatus = true;
+        },
+
+        onblur: function (event) {
+            let elementDom = event.target;
+            elementDom.placeholder = 'Search Word';
+            this.displayStatus = false;
+        }
+    }
+})
 /*new Vue({
     el: "#addWordModal",
     data: {

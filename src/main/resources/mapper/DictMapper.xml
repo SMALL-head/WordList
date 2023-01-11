@@ -5,6 +5,9 @@
 
 <mapper namespace="com.zyc.wordlistsp.mapper.DictMapper">
     <select id="search" resultType="java.lang.String">
-        select translation from dict.word where binary word = #{word}
+        select `translation` from dict.word where binary word = #{word}
+    </select>
+    <select id="searchByPrefix" resultType="java.lang.String">
+        select word from dict.word where word like concat(#{prefix}, '%') limit 0,6;
     </select>
 </mapper>

@@ -16,6 +16,27 @@
             });
         });
     </script>
+    <style>
+        .display_status_none {
+            position: absolute;
+            display: none;
+            top: 50px;
+            width: 220px;
+            border: 2px solid #4e71f2;
+
+        }
+
+        .display_status_block {
+            position: absolute;
+            display: block;
+            top: 50px;
+            width: 220px;
+            border: 2px solid #4e71f2;
+        }
+        li {
+            list-style: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,10 +67,13 @@
             </ul>
 
             <!--查找单词表单提交-->
-            <form class="form-inline my-2 my-lg-0" method="get" action="/word/search2">
+            <form id="searchBox" class="form-inline my-2 my-lg-0" method="get" action="/word/search2">
+                <div :class="{['display_status_block']: displayStatus, ['display_status_none']: !displayStatus}">
+                    <li v-for="word in words">{{word}}</li>
+                </div>
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Word" aria-label="Search"
-                       name="search" th:value="${search_word}" onfocus="this.placeholder=''"
-                       onblur="this.placeholder='Search Word'" required>
+                       name="search" th:value="${search_word}" @focus="onfocus($event)"
+                       @blur="onblur($event)" required>
                 <input style="display: none" name="uid" th:value="${uid}">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search
                 </button>

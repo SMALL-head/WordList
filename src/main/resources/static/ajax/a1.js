@@ -58,4 +58,3 @@ addWord = function (word, uid) {
         alert(data);
     })
 }
-

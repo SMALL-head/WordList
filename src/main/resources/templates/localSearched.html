@@ -36,7 +36,7 @@
                         单词本
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a th:each="name : ${nameList}" th:href="@{/list/display(listname=${name})}"
+                        <a th:each="name : ${nameList}" th:href="@{/list/display(listname=${name}, uid=${uid})}"
                            class="dropdown-item"
                            style="color: black;text-align: center;text-decoration: none" th:text="${name}">listname</a>
                         <div class="dropdown-divider"></div>

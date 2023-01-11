@@ -13,6 +13,9 @@ spring:
             web-stat-filter:
                 enabled: true
         url: jdbc:mysql://localhost:3306/WordListDB?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    redis:
+        port: 6400
+        database: 1
 
 mybatis:
 #    config-location: classpath:mybatis/mybatis-config.xml

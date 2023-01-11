@@ -5,17 +5,16 @@ import com.zyc.wordlistsp.pojo.Word;
 import com.zyc.wordlistsp.service.ListService;
 import com.zyc.wordlistsp.service.SearchWordService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -118,5 +117,11 @@ public class WordController {
                              @RequestParam("uid") int uid) {
         listService.deleteWordByName(list, word, uid);
         return "redirect:/list/display?listname=" + list + "&page=" + curPage + "&uid=" + uid;
+    }
+
+    @RequestMapping("/prefix")
+    @ResponseBody
+    public List<String> searchByPrefix(@RequestParam("prefix") String prefix) {
+        return service.searchByPrefix(prefix);
     }
 }
